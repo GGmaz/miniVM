@@ -1,16 +1,16 @@
-R - 10px Right
-U - 10px Under
-L - 10px Left
-D - 10px Up
+R - 10px Right draw
+U - 10px Under draw
+L - 10px Left draw
+D - 10px Up draw
 
-P...P - da te pozicionira u onu tacku izmedju dva P
+P...P - position between two P-s
 
-C - LU
-B - LD
-E - RD
-A - RU
+C - LU diagonal draw
+B - LD diagonal draw
+E - RD diagonal draw
+A - RU diagonal draw
 
-J - SMANJI korak X-ose za 1px ZAUVEK za pozicioniranje/crtanje
-K - POVECA korak X-ose za 1px ZAUVEK za pozicioniranje/crtanje
-M - SMAJMI korak Y-ose za 1px ZAUVEK za pozicioniranje/crtanje
-N - POVECA korak Y-ose za 1px ZAUVEK za pozicioniranje/crtanje
+J - DECREMENT X-coordinate for 1px FOREVER for positioning/drawing
+K - INCREMENT X-coordinate for 1px FOREVER for positioning/drawing
+M - DECREMENT Y-coordinate for 1px FOREVER for positioning/drawing
+N - INCREMENT Y-coordinate for 1px FOREVER for positioning/drawing

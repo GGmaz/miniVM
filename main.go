@@ -84,7 +84,7 @@ func main() {
 
 // Global variables
 var index = 0
-var commands = generateCommands()
+var commandsGV = generateCommands()
 
 // var commands = "RULDX"
 // var commands = "PRUP RULDX"
@@ -249,7 +249,7 @@ func binaryToDecimal(binaryStr string) int {
 
 // Function to get a single byte from stdin and return its binary representation
 func getBinaryInput() (string, error) {
-	char := commands[index]
+	char := commandsGV[index]
 	index++
 
 	// Cast the byte to 32 bits and return its binary representation
