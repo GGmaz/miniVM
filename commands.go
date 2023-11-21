@@ -115,10 +115,51 @@ func generateCommands() string {
 			commands += "UUUUUUP"
 			commands += fourthObject
 		}
-
 	}
 
+	// center figures
+	commands += "P"
+	for j := 0; j < 7; j++ {
+		commands += "D"
+	}
+	for j := 0; j < 21; j++ {
+		commands += "L"
+	}
+	commands += "PJJJJJMMMMM"
+
+	// first figure
+	commands += secondObject
+	commands += "KKKKKNNNNN"
+
+	// second figure
+	commands += "PDRP"
+	commands += secondObjectInv
+
+	// third figure
+	for j := 0; j < 10; j++ {
+		commands += "KN"
+	}
+	commands += "PDLP"
+
+	commands += secondObject
+
+	// fourth figure
+	commands += "PRP"
+	for j := 0; j < 10; j++ {
+		commands += "KN"
+	}
+	commands += "PDP"
+
+	commands += secondObjectInv
+
+	// fifth figure
+	commands += "JJJJJJJJJJPLDDPKKKKKKKKKK"
+	for j := 0; j < 8; j++ {
+		commands += "KN"
+	}
+
+	commands += secondObject
+
 	commands += "X"
-	println(len(commands))
 	return commands
 }

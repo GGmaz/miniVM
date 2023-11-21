@@ -68,7 +68,7 @@ func loadVMImage(filename string) ([]string, error) {
 }
 
 func main() {
-	filename := "resource/task2.bin" //9
+	filename := "resource/task2.bin"
 	data, err := loadVMImage(filename)
 	if err != nil {
 		fmt.Println("Error:", err)
@@ -84,6 +84,7 @@ func main() {
 
 // Global variables
 var index = 0
+var commands = generateCommands()
 
 // var commands = "RULDX"
 // var commands = "PRUP RULDX"
@@ -91,8 +92,6 @@ var index = 0
 // var commands = "PRUP J R K PRP JJJJJ R KKKKK PRP JJJJJJJJJ R X"
 // var commands = "PRUP M U N PUP MMMMM U NNNNN PUP MMMMMMMMM U X"
 //var commands = "PRUP KKKKKKKKKK KKKKKKKKKK NNNNNNNNNN A X"
-
-var commands = generateCommands()
 
 func executeVM(data []string) {
 	// Initialize registers
