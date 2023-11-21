@@ -6,17 +6,23 @@ var thirdObject = "RDRURDRU"
 var fourthObject = "DLDRDLDR"
 var thirdObjectInv = "DLULDLUL"
 var secondObjectInv = "LDLULDLU"
+var sixthObjectInv = "ULDLULDL"
+var fifthObjectInv = "LULDLULD"
+var fifthObject = "URDRURDR"
+var sixthObject = "RURDRURD"
 
 func generateCommands() string {
 	var commands string
 	for i := 0; i <= 5; i++ {
 		if i == 0 {
 			commands += firstObject
+
 			commands += "P"
 			for j := 0; j < 10; j++ {
 				commands += "R"
 			}
 			commands += "UUP"
+
 			commands += secondObject
 
 			commands += "PRRRRDDP"
@@ -47,6 +53,67 @@ func generateCommands() string {
 			commands += "P"
 
 			commands += secondObjectInv
+		} else if i == 2 {
+			commands += "P"
+			for j := 0; j < 8; j++ {
+				commands += "U"
+			}
+			commands += "LLP"
+
+			commands += secondObject
+
+			commands += "P"
+			for j := 0; j < 26; j++ {
+				commands += "R"
+			}
+			commands += "P"
+
+			commands += thirdObject
+		} else if i == 3 {
+			commands += "P"
+			for j := 0; j < 8; j++ {
+				commands += "U"
+			}
+			commands += "LLP"
+
+			commands += sixthObjectInv
+
+			commands += "P"
+			for j := 0; j < 22; j++ {
+				commands += "L"
+			}
+			commands += "P"
+
+			commands += fifthObjectInv
+		} else if i == 4 {
+			commands += "P"
+			for j := 0; j < 8; j++ {
+				commands += "U"
+			}
+			commands += "LLLLLP"
+
+			commands += firstObject
+
+			commands += "P"
+			for j := 0; j < 10; j++ {
+				commands += "R"
+			}
+			commands += "DDDDDDP"
+
+			commands += fifthObject
+
+			commands += "PRRRRUUP"
+			commands += fifthObject
+
+			commands += "PRRRRDDP"
+			commands += sixthObject
+
+			commands += "P"
+			for j := 0; j < 10; j++ {
+				commands += "R"
+			}
+			commands += "UUUUUUP"
+			commands += fourthObject
 		}
 
 	}
