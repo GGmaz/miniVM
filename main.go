@@ -152,7 +152,7 @@ func executeVM(data []string) {
 				cond := g()
 				addr := g()
 				if binaryToDecimal(cond) != 0 {
-					ip = int(binaryToDecimal(addr))
+					ip = binaryToDecimal(addr)
 				}
 			case 7:
 				// "not"
@@ -167,8 +167,6 @@ func executeVM(data []string) {
 				fmt.Printf("%c", output)
 			case 9:
 				// "getc"
-				// Assuming you implement a function to get input from the user
-				// and convert it to binary format
 				input := getBinaryInput()
 				f(input)
 			case 10:
@@ -235,7 +233,7 @@ func binaryToDecimal(binaryStr string) int {
 	return int(decimal)
 }
 
-// Dummy function to get binary input (you need to implement this)
+// Dummy function to get binary input
 func getBinaryInput() string {
 	// Placeholder implementation
 	return "00000000000000000000000000000000"
