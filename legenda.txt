@@ -1,0 +1,16 @@
+R - 10px Right
+U - 10px Under
+L - 10px Left
+D - 10px Up
+
+P...P - da te pozicionira u onu tacku izmedju dva P
+
+C - LU
+B - LD
+E - RD
+A - RU
+
+J - SMANJI korak X-ose za 1px ZAUVEK za pozicioniranje/crtanje
+K - POVECA korak X-ose za 1px ZAUVEK za pozicioniranje/crtanje
+M - SMAJMI korak Y-ose za 1px ZAUVEK za pozicioniranje/crtanje
+N - POVECA korak Y-ose za 1px ZAUVEK za pozicioniranje/crtanje

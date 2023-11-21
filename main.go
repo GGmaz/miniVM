@@ -53,7 +53,7 @@ func loadVMImage(filename string) ([]string, error) {
 		return nil, fmt.Errorf("error reading data-size: %v", err)
 	}
 
-	fmt.Println("dataSize:", dataSize)
+	//fmt.Println("dataSize:", dataSize)
 
 	// Read data into the array
 	for i := 0; i < int(dataSize); i++ {
@@ -68,7 +68,7 @@ func loadVMImage(filename string) ([]string, error) {
 }
 
 func main() {
-	filename := "resource/task1.bin" //9
+	filename := "resource/task2.bin" //9
 	data, err := loadVMImage(filename)
 	if err != nil {
 		fmt.Println("Error:", err)
@@ -81,6 +81,18 @@ func main() {
 	// Execute VM instructions
 	executeVM(data)
 }
+
+// Global variables
+var index = 0
+
+// var commands = "RULDX"
+// var commands = "PRUP RULDX"
+// var commands = "PRRUP CBEAX"
+// var commands = "PRUP J R K PRP JJJJJ R KKKKK PRP JJJJJJJJJ R X"
+// var commands = "PRUP M U N PUP MMMMM U NNNNN PUP MMMMMMMMM U X"
+//var commands = "PRUP KKKKKKKKKK KKKKKKKKKK NNNNNNNNNN A X"
+
+var commands = generateCommands()
 
 func executeVM(data []string) {
 	// Initialize registers
@@ -167,8 +179,11 @@ func executeVM(data []string) {
 				fmt.Printf("%c", output)
 			case 9:
 				// "getc"
-				input := getBinaryInput()
-				f(input)
+				input, err := getBinaryInput()
+				if err != nil {
+					panic(err)
+				}
+				f(fmt.Sprintf("%032b", binaryToDecimal(input)&0xff))
 			case 10:
 				// halt
 				return
@@ -233,8 +248,26 @@ func binaryToDecimal(binaryStr string) int {
 	return int(decimal)
 }
 
-// Dummy function to get binary input
-func getBinaryInput() string {
-	// Placeholder implementation
-	return "00000000000000000000000000000000"
+// Function to get a single byte from stdin and return its binary representation
+func getBinaryInput() (string, error) {
+	char := commands[index]
+	index++
+
+	// Cast the byte to 32 bits and return its binary representation
+	return fmt.Sprintf("%032b", char), nil
 }
+
+//func getBinaryInput() (string, error) {
+//	// Read exactly one byte from stdin
+//	var input [1]byte
+//	_, err := os.Stdin.Read(input[:])
+//	if err != nil {
+//		return "", err
+//	}
+//
+//	char := commands[index]
+//	index++
+//
+//	// Cast the byte to 32 bits and return its binary representation
+//	return fmt.Sprintf("%032b", char), nil
+//}
