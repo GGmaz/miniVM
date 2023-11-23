@@ -161,5 +161,7 @@ func generateCommands() string {
 	commands += secondObject
 
 	commands += "X"
+	println(commands)
+	println(len(commands))
 	return commands
 }
